@@ -54,7 +54,6 @@ char *b[20];
 
 实际应用：
 
-- [指针二维数组](verification.1.12.c)
 - [指针字符串](8.22.c)
 
 ## 8.8 实例剖析
@@ -68,7 +67,7 @@ char *b[20];
 1. B (`&` 是对一个变量取地址)!
 2. A ([verification](verification.1.2.c), 相加单位即下标)!
 3. D
-4. A [verification](verification1.4.c)!
+4. A [verification](verification.1.4.c)!
 5. 错题。最后一行应更正为：`printf("%d %d %d\n", *ptr1, *ptr2, *ptr1-*ptr2);` [verification](verification.1.5,c); 第一行 `*ptr2=&n` 则答案为：D
 6. B [verification](verification.1.6.c)
 7. A [verification](verification.1.7.c)
@@ -76,7 +75,7 @@ char *b[20];
 9. B 
 10. 错题 [verification](verification.1.10.c)
 11. D [verification](verification.1.11.c)
-12. B [verification](verification.1.12.c)
+12. D [verification](verification.1.12.c) 其中[]中的数字为地址，计算方法等同于数组的下标计算一样.
 
 ### 二. 程序填空
 1. C
@@ -85,4 +84,14 @@ char *b[20];
 4. D
 
 ### 三. 程序阅读题
+
+a[0]='6';
+a[1]='7';
+a[2]='\0';
+
+
+
+
 1. 
+2. 
+3. 

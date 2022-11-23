@@ -5,7 +5,9 @@ int main()
     int i;
     char *month(int n);
     scanf("%d", &i);
+    
     printf("%s\n", month(i));
+    printf("%c\n", *(month(i)));
     return 0;
 }
 
