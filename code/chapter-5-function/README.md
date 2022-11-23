@@ -65,7 +65,7 @@ Note: 没有理解公式.
 
 1. B ? 
 2. A !
-3. D !
+3. A !x
 4. B !
 5. C !
 6. D
@@ -94,4 +94,26 @@ Note: 没有理解公式.
 
 3. 编写函数，打印杨辉三角
 
-![3.3](3.3.png)
+![3.3](3.3..png)
+
+[answer](exercise.3.3.c)
+
+4. [answer](exercise.3.4.c)
+
+5. [answer](exercise.3.5.c)
+
+6. [answer](exercise.3.6.c)
+
+7. [answer](exercise.3.7.c)
+
+8. [answer](exercise.3.8.c)
+
+9. [answer](exercise.3.9.c)
+
+10. [answer](exercise.3.10.c)
+
+// todo ...
+
+![3.4-8](3.4-8.png)
+
+![3.9-12](3.9-12.png)

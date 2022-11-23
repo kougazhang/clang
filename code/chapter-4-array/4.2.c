@@ -10,5 +10,4 @@ int main() {
     for (int i=0;i<30;i+=5) {
         printf("%d %d %d %d %d\n", fib[i],fib[i+1],fib[i+2],fib[i+3],fib[i+4]);
     }
-算法
 }
