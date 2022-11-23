@@ -12,4 +12,4 @@
 
 ### 6.2.2 静态变量 static
 
-对于函数来说，`static` 表示该函数仅在该文件内使用。参见[函数部分](../chapter-6-variable/README.md)
+对于函数来说，`static` 表示该函数仅在该文件内使用。参见[函数部分](../chapter-5-function/exercise.3.10.c)
