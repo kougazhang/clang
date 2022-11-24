@@ -18,7 +18,7 @@ int main()
     
     struct student *head=create(n);
     
-    for (int i=0;head!=NULL;i++)
+    while (head!=NULL) 
     {
         printf("%s %d\n", head->name, head->age);
         head=head->next;
