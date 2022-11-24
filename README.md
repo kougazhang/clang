@@ -34,4 +34,10 @@ C 语言全局变量的默认值是零值；**局部变量的默认值是随机�
 
 //todo。未做要求
 
-## 第 8 章
+## 第 8 章 指针
+
+[第 8 章 指针](code/chapter-8-pointer/README.md)
+
+## 第 9 章 结构体、共用体与枚举
+
+[第 9 章 结构体、共用体与枚举](code/chapter-9-struct/README.md)
