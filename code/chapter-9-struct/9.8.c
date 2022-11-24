@@ -15,11 +15,13 @@ struct student
 int main()
 {
     int n;
+    printf("the num of nodes:\n");
     scanf("%d", &n);
     
     struct student *head=create(n);
     head=delete(head, "jack");    
-    for (int i=0;head!=NULL;i++)
+    
+    while (head!=NULL)
     {
         printf("%s %d\n", head->name, head->age);
         head=head->next;
@@ -35,27 +37,25 @@ struct student *delete(struct student *head, char name[64])
         return head;
     }
 
-    struct student *res=head;
-    for (int i=0;head!=NULL;i++)
+    struct student *cur=head, *pre=head;
+    while (strcmp(cur->name, name)!=0 && cur->next!=NULL)
     {
-        if (strcmp(head->name, name)==0)
-        {
-            if (i==0)
-            {
-                res=head->next;
-                free(head);
-                return res;
-            } else {
-                struct student *t=head;
-                head=head->next;
-                free(t);
-                break;
-            }
-        } else {
-            head=head->next;   
-        }
+        pre=cur;
+        cur=cur->next;
     }
-    return res;
+    if (strcmp(cur->name, name)==0)
+    {
+        if (cur==head)
+        {
+            head=cur->next;
+        } else {
+            pre->next=cur->next;
+        }
+        free(cur);
+    } else {
+        printf("not found!\n");
+    }
+    return head;
 }
 
 struct student *create(int n)

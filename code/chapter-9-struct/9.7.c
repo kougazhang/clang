@@ -14,6 +14,7 @@ struct student
 int main()
 {
     int n;
+    printf("the num of nodes:\n");
     scanf("%d", &n);
     
     struct student *head=create(n);
