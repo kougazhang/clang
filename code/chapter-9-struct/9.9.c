@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <strlib.h>
 
 struct student *create(int n);
 struct student *delete(struct student *head, char name[64]);
+void insert(struct student *head, struct student *node);
 
 struct student 
 {
@@ -18,9 +19,18 @@ int main()
     printf("the num of nodes:\n");
     scanf("%d", &n);
     
+    // 创建链表
     struct student *head=create(n);
-    head=delete(head, "jack");    
     
+    // 删除学生名称为 jack 的结点
+    // head=delete(head, "jack");    
+    
+    // 插入链表。链表已按年龄排序，要求插入时有序插入。
+    struct student *node={"tony", 18};
+    printf("insert a new node: %s %d\n", node->name, node->age);
+    insert(head, node);
+
+    // 遍历链表
     while (head!=NULL)
     {
         printf("%s %d\n", head->name, head->age);
@@ -28,6 +38,24 @@ int main()
     }
 
     return 0;
+}
+
+void insert(struct student *head, struct student *node)
+{
+    // 如果 head 为 NULL，则把 node 做完链表头返回
+    if (head==NULL)
+    {
+        return node;
+    }
+
+    struct student *pre=head,*cur=head;
+    while (cur!=NULL)
+    {
+        if (pre.age<=node.age&&node.age<=cur.age)
+        {
+            
+        }
+    }
 }
 
 struct student *delete(struct student *head, char name[64])
