@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
-#include <strlib.h>
+#include <stdlib.h>
 
 struct student *create(int n);
 struct student *delete(struct student *head, char name[64]);
-void insert(struct student *head, struct student *node);
+struct student *insert(struct student *head, struct student *node);
 
 struct student 
 {
@@ -26,9 +26,9 @@ int main()
     // head=delete(head, "jack");    
     
     // 插入链表。链表已按年龄排序，要求插入时有序插入。
-    struct student *node={"tony", 18};
-    printf("insert a new node: %s %d\n", node->name, node->age);
-    insert(head, node);
+    struct student node={"tony", 18};
+    printf("insert a new node: %s %d\n", node.name, node.age);
+    head=insert(head, &node);
 
     // 遍历链表
     while (head!=NULL)
@@ -40,22 +40,39 @@ int main()
     return 0;
 }
 
-void insert(struct student *head, struct student *node)
+struct student *insert(struct student *head, struct student *node)
 {
     // 如果 head 为 NULL，则把 node 做完链表头返回
     if (head==NULL)
     {
         return node;
     }
+    if (node->age < head->age)
+    {
+        node->next=head;
+        return node;
+    }
 
     struct student *pre=head,*cur=head;
     while (cur!=NULL)
     {
-        if (pre.age<=node.age&&node.age<=cur.age)
+        if (pre->age<=node->age && node->age<=cur->age)
         {
-            
+            pre->next = node;
+            node->next=cur;
+            break; 
+        } else {
+            pre=cur;
+            cur=cur->next;
         }
     }
+
+    if (cur==NULL)
+    {
+        pre->next=node;
+    }
+
+    return head;
 }
 
 struct student *delete(struct student *head, char name[64])
