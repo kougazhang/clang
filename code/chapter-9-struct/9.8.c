@@ -43,7 +43,7 @@ struct student *delete(struct student *head, char name[64])
         if (strcmp(cur->name, name)==0)
         {
             // 处理 head 就是要删除的项
-            if (pre==head)
+            if (cur==head)
             {
                 head=head->next;
             } else
