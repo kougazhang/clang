@@ -95,4 +95,4 @@ ch=fgetc(fp);
 
 以字符串为单位的读写：`fputs()`, `fgets()`
 
-[read-write-string]
+[read-write-string](read-write-string.c)

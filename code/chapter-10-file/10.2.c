@@ -2,25 +2,25 @@
 
 int main()
 {
-    FILE *fr, *fw;
-    char spath[128], wpath[128];
+    FILE *fread, *fwrite;
+    char src[128], dst[128];
     printf("read path:\n");
-    gets(spath);
+    gets(src);
     printf("write path:\n");
-    gets(wpath);
+    gets(dst);
 
-    fr=fopen(spath, "r");
-    fw=fopen(wpath, "w");
+    fread=fopen(src, "r");
+    fwrite=fopen(dst, "w");
 
-    while (!feof(fr))
+    while (!feof(fread))
     {
-        char ch=fgetc(fr);
+        char ch=fgetc(fread);
         if (ch!='\0')
         {
-            fputc(ch,fw);
+            fputc(ch,fwrite);
         }
     }
 
-    fclose(fr);
-    fclose(fw);
+    fclose(fread);
+    fclose(fwrite);
 }
