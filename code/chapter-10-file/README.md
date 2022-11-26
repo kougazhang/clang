@@ -56,7 +56,7 @@ fp=fopen("a.txt", "r");
 
 文件使用方式：
 - "r" 以只读方式打开一个文件
-- "w" 只xp
+- "w" 只写
 - "+" 读写
 - "a" 追加
 - "b" 打开二进制
@@ -69,6 +69,13 @@ fp=fopen("a.txt", "r");
 [例10.1](10.1.c)
 
 ## 文件读写
+
+- 以字符为单位的读写：`fputc(ch, fp)`, `fgetc(fp)`
+- 以字符串为单位的读写：`fputs(str, fp)`, `fgets(str, n, fp)`
+- 判断到达文件尾函数：`feof()`
+- 格式方式读写文件：`fprintf()`, `fscanf()`
+- 以数据块为单位读写：`fwrite()`, `fread()`
+- 文件的定位函数：`rewind()`, `fseek()`, `ftell()`
 
 以字符为单位的读写：`fputc(ch, fp)`, `fgetc()`
 
@@ -84,9 +91,8 @@ ch=fgetc(fp);
 
 [例10.2](10.2.c)
 
-- 以字符串为单位的读写：`fputs()`, `fgets()`
-- 判断到达文件尾函数：`feof()`
-- 格式方式读写文件：`fprintf()`, `fscanf()`
-- 以数据块为单位读写：`fwrite()`, `fread()`
-- 文件的定位函数：`rewind()`, `fseek()`, `ftell()`
+---
 
+以字符串为单位的读写：`fputs()`, `fgets()`
+
+[read-write-string]

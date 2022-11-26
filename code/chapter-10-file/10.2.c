@@ -15,7 +15,10 @@ int main()
     while (!feof(fr))
     {
         char ch=fgetc(fr);
-        fputc(ch,fw);
+        if (ch!='\0')
+        {
+            fputc(ch,fw);
+        }
     }
 
     fclose(fr);
