@@ -8,7 +8,7 @@ int main()
     gets(s);
 
     FILE *fp;
-    if ((fp=fopen(s, "a"))==NULL)
+    if ((fp=fopen(s, "r"))==NULL)
     {
         printf("File open error\n");
         exit(1);
