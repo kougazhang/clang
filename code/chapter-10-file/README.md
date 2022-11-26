@@ -73,9 +73,11 @@ fp=fopen("a.txt", "r");
 - 以字符为单位的读写：`fputc(ch, fp)`, `fgetc(fp)`
 - 以字符串为单位的读写：`fputs(str, fp)`, `fgets(str, n, fp)`
 - 判断到达文件尾函数：`feof()`
-- 格式方式读写文件：`fprintf()`, `fscanf()`
+- 格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输出列表)`, `fscanf()`
 - 以数据块为单位读写：`fwrite()`, `fread()`
 - 文件的定位函数：`rewind()`, `fseek()`, `ftell()`
+
+---
 
 以字符为单位的读写：`fputc(ch, fp)`, `fgetc()`
 
@@ -96,3 +98,15 @@ ch=fgetc(fp);
 以字符串为单位的读写：`fputs()`, `fgets()`
 
 [read-write-string](read-write-string.c)
+
+---
+
+格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输出列表)`, `fscanf()`
+
+`fprintf()` 的使用方式和 `printf` 类似，只不过 `printf` 输出到屏幕，`fprintf` 输出到文件，所以 `fprintf` 的第一个参数是文件指针.
+
+举例：
+
+```
+fprintf(fp, "%d, %f", 1,2,3);
+```
