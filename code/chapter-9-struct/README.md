@@ -127,7 +127,7 @@ union number
 
 [代码演示](9.11.c)
 
-## 习题
+## 习题 P225
 
 1. 
 
@@ -153,6 +153,10 @@ union number
 二 编程题
 
 [1](exercise.1.c)
+
+[2](exercise.2.c)
+
+[3](exercise.3.c)
 
 ![exercise](exercise.2.png)
 
