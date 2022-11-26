@@ -22,10 +22,10 @@ int main()
     printf("input n:\n");
     scanf("%d", &n);
     
-    struct contact *head;
+    struct contact *head=NULL;
     head=create(head, n);
     
-    for (int i=0;i<n;i++)
+    while (head!=NULL)
     {
         printf("%s\n", head->birthday);
         head=head->next;   
@@ -65,7 +65,7 @@ struct contact *insert(struct contact *head, struct contact *node)
     struct contact *cur=head, *pre=head;
     while (cur!=NULL)
     {
-        if (strcmp(pre->birthday,node->birthday)<0 && strcmp(cur->birthday,node->birthday)>0)
+        if (strcmp(pre->birthday,node->birthday)<=0 && strcmp(cur->birthday,node->birthday)=>0)
         {
             pre->next=node;
             node->next=cur;

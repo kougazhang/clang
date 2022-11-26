@@ -45,3 +45,7 @@ C 语言全局变量的默认值是零值；**局部变量的默认值是随机�
 ## 第 9 章 结构体、共用体与枚举
 
 [第 9 章 结构体、共用体与枚举](code/chapter-9-struct/README.md)
+
+## 第 10 章 文件
+
+[第 10 章 文件](code/chapter-10-file/README.md)
