@@ -68,16 +68,19 @@ fp=fopen("a.txt", "r");
 
 [例10.1](10.1.c)
 
-## 文件读写
+## 文件操作大全
 
+- 打开关闭：`fopen`, `fclose`
 - 以字符为单位的读写：`fputc(ch, fp)`, `fgetc(fp)`
 - 以字符串为单位的读写：`fputs(str, fp)`, `fgets(str, n, fp)`
 - 判断到达文件尾函数：`feof()`
-- 格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输出列表)`, `fscanf()`
-- 以数据块为单位读写：`fwrite()`, `fread()`
+- 格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输入列表)`, `fscanf(fp, 格式控制字符串, 输入列表)`
+- 以数据块为单位读写：`fwrite(buffer, size, count, fp)`, `fread(buffer, size, count, fp)`
 - 文件的定位函数：`rewind()`, `fseek()`, `ftell()`
 
 ---
+
+## 文件读写
 
 以字符为单位的读写：`fputc(ch, fp)`, `fgetc()`
 
@@ -101,7 +104,7 @@ ch=fgetc(fp);
 
 ---
 
-格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输出列表)`, `fscanf()`
+格式化方式读写文件：`fprintf(fp, 格式控制字符串, 输入列表)`, `fscanf(fp, 格式控制字符串, 输入列表)`
 
 `fprintf()` 的使用方式和 `printf` 类似，只不过 `printf` 输出到屏幕，`fprintf` 输出到文件，所以 `fprintf` 的第一个参数是文件指针.
 
@@ -110,3 +113,32 @@ ch=fgetc(fp);
 ```
 fprintf(fp, "%d, %f", 1,2,3);
 ```
+
+同理，`fscanf(fp, 格式控制字符串, 输入列表)` 的使用同 `scanf()`, 只不过是针对文件的。
+
+```
+fscanf(fp, "%d, %f", &a, &b);
+```
+
+---
+
+以数据块为单位读写：`fwrite(buffer, size, count, fp)`, `fread(buffer, size, count, fp)`
+
+- buffer: 指向要输出/输入数据库的首地址指针
+- size: 每个要写/读的数据块大小（字节数）
+- count: 要写/读的数据块个数
+- fp: 文件指针
+
+[以数据块为单位的代码实现](rw-buffer.c)
+
+---
+
+## 文件定位
+
+文件的定位函数：`rewind()`, `fseek()`, `ftell()`
+
+- `rewind(fp)`, 将文件指针移到到文件的开头
+- `fseek(fp,位移量,起始点)`
+    - 位移量，表示移动的字节数
+    - 起始点，表示从何处开始计算位移量。
+- `ftell(fp)`，
